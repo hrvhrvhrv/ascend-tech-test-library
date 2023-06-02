@@ -1,26 +1,53 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <the-header></the-header>
+  <main>
+    <router-view></router-view>
+  </main>
+  <page-footer></page-footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheHeader from './components/layout/TheHeader.vue';
+import PageFooter from './components/layout/PageFooter.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
+    TheHeader,
+    PageFooter
+  },
+  data() {
+    return {
+      bannerMessage: 'Browse our Catalog',
+    }
+  }, methods: {}
 }
 </script>
 
-<style>
+<style scoped>
+@import './assets/css/main.css';
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+main {
+  margin-top: 180px;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 80px;
+  margin: 0;
+  text-align: center;
+}
+
+section {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
 }
 </style>
